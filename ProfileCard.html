@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(bg.jpeg);
+        /*"background-size: 100% 100%;" kodu, arka plan resminin boyutunu belirler.
+        İlk değer genişlik, ikinci değer yükseklik için kullanılır.
+        Bu kodu kullanarak, arka plan resminin boyutunu tam olarak ekrana sığacak şekilde ayarlayabilirsiniz*/
+        background-size: 100% 100%;
+    }
+    .profile-card{
+        background-color: rgba(54, 53, 53, 0.808);
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .avatar{
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(130deg, blue, red);
+        /*background: linear-gradient(130deg, blue, red);, bir arka plan oluşturmak için doğrusal bir renk geçişi (gradient) kullanır.
+        Gradientin başlangıç rengi mavi, bitiş rengi ise kırmızıdır.
+        Gradient, sol alt köşeden sağ üst köşeye doğru 130 derecelik bir açıyla ilerler.*/
+        animation: animation 2s linear infinite;
+        background-size: 200% 200%;
+        /*Bu CSS kodu, bir animasyonlu arka plan oluşturmak için kullanılır. "animation" özelliği, belirtilen animasyonu belirli bir süre boyunca yürütmek için kullanılır.
+        İlk parametre olan "animation" adı, tanımlanmış bir animasyonun adını belirtir.
+        İkinci parametre olan "2s", animasyonun süresini belirler. Üçüncü parametre olan "linear", animasyonun hız eğrisini belirler. Dördüncü parametre olan "infinite", animasyonun sürekli olarak yinelenmesini sağlar.
+
+        "background-size" özelliği ise arka plan resminin boyutunu belirler. İlk parametre olan "200%" genişlik, ikinci parametre olan "200%" yükseklik için kullanılır.*/     
+        height: 110px;
+        width: 110px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
+    /*"animation" adlı bu keyframe, belirli bir süre boyunca arka planın konumunu değiştirerek bir animasyonlu efekt oluşturur.
+    Keyframe, %25'ten başlayarak soldan aşağıya doğru ilerleyen bir arka plan resmi konumunu, %50'de sağ alt köşeye, %75'te sağ üst köşeye ve %100'de sol üst köşeye konumlandırır.
+    Bu sayede arka plan resmi, saat yönünde dönen bir döngü oluşturur. ( süreyi 2 saniye olarak belirledik.)*/
+    @keyframes animation{
+        25%{
+            background-position: left bottom;
+        }
+        50%{
+            background-position: right bottom;
+        }
+        75%{
+            background-position: right top;
+        }
+        100%{
+            background-position: left top;
+        }
+    }
+    img{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    .name{
+        margin: 8px 0;
+        font-weight: bold;
+        color: white;
+        margin-left: 10px;
+        
+    }
+    .social-media{
+        margin-bottom: 20px;
+    }
+    .item{
+        color: #fff;
+        margin: 0 6px;
+        font-size: 20px;
+        transition: all .3s;
+    }
+    .item:hover{
+        color: red;
+    }
+    .description{
+        color: orangered;
+        margin-bottom: 20px;
+    }
+    .contact{
+        border: 1px solid #fff;
+        width: 110px;
+        height: 35px;
+        color: orangered;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+    .contact:hover{
+        background-color: rgba(255, 0, 0, 0.589);
+    }
+</style>
+<body>
+    <div class="profile-card">
+        <div class="avatar">
+            <img src="avatar.png" alt="avatar">
+        </div>
+        <div class="name">Mahmut PITIR</div>
+        <div class="description">Developer & Designer</div>
+        <div class="social-media">
+            <a href="#" class="item"><i class="fab fa-facebook"></i></a>
+            <a href="#"  class="item"><i class="fab fa-youtube"></i></a>
+            <a href="#"  class="item"><i class="fab fa-github"></i></a>
+            <a href="#"  class="item"><i class="fab fa-twitter"></i></a>
+        </div>
+        <a href="#"  class="contact">
+            Contact me
+        </a>
+    </div>
+    
+</body>
+</html>
